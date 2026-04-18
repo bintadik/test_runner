@@ -21,4 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         uv sync
-        
+    - name: Create .env file from single secret
+      run: |
+        echo "${{ secrets.ENV_FILE }}" > .env
+
